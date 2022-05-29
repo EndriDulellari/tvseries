@@ -28,8 +28,8 @@ public class TvSerial extends ReactivePanacheMongoEntity {
         return findById(id);
     }
 
-    public static Uni<TvSerial> getSerialByName(String name) {
-        return find("name", name).firstResult();
+    public static Multi<TvSerial> getSerialByName(String name) {
+        return find("name", name).stream();
     }
 
     public static Multi<TvSerial> streamAllTvSeries() {

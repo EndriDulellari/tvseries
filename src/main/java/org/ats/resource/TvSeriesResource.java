@@ -40,9 +40,10 @@ public class TvSeriesResource {
 
     @GET
     @Path("/name/{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<TvSerial> getSerialByName(@PathParam("name") String name) {
-        return repository.findByName(name);
+    @Produces(MediaType.SERVER_SENT_EVENTS)
+    @RestStreamElementType(MediaType.APPLICATION_JSON)
+    public Multi<TvSerial> getSerialByName(@PathParam("name") String name) {
+        return TvSerial.getSerialByName(name);
     }
 
     @POST
