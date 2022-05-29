@@ -1,4 +1,4 @@
-package org.ats.controller;
+package org.ats.resource;
 
 import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntityBase;
 import io.smallrye.mutiny.Multi;
@@ -12,10 +12,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
-import java.net.URISyntaxException;
 
 @Path("/series")
-public class TvSeriesController {
+public class TvSeriesResource {
 
 
 
@@ -45,7 +44,7 @@ public class TvSeriesController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addTvSerial(TvSerial tvSerial) throws URISyntaxException {
+    public Response addTvSerial(TvSerial tvSerial){
         tvSerial.persist();
         return Response.created(URI.create("/persons/" + tvSerial.id)).build();
     }
