@@ -66,6 +66,17 @@
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.20</version>
+    </dependency>
+    <!--Dependency for Mono/Flux-->
+<!--    <dependency>-->
+<!--      <groupId>io.projectreactor</groupId>-->
+<!--      <artifactId>reactor-core</artifactId>-->
+<!--      <version>3.2.22.RELEASE</version>-->
+<!--    </dependency>-->
   </dependencies>
   <build>
     <plugins>
