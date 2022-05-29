@@ -1,7 +1,6 @@
 package org.ats.repository;
 
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
-import io.quarkus.panache.common.Sort;
 import org.ats.entity.TvSerial;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,7 +13,7 @@ public class SerialRepository implements PanacheMongoRepository<TvSerial> {
         return find("name", name).list();
     }
 
-    public List<TvSerial> findOrderedName(){
-        return listAll(Sort.by("name"));
+    public void addSerial (TvSerial tvSerial){
+        persist(tvSerial);
     }
 }
